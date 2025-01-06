@@ -1,0 +1,282 @@
+{
+    "madame_beaufort": {
+      "name": "Madame Beaufort",
+      "role": "Tavern Owner",
+      "faction": "Independent Merchants",
+      "background": "A burly, flamboyant proprietor of the notorious brothel-tavern combo, The Poop Deck. With broad shoulders, a muscular build, and a five o'clock shadow, Madame Beaufort's shoulder-length blond locks—possibly a wig—complete their striking appearance. Known for their booming laugh, sharp wit, and an uncanny ability to diffuse tension with humor or intimidation.",
+      "personality_traits": ["flamboyant", "witty", "intimidating", "charismatic"],
+      "key_relationships": {
+        "locals": "Respected establishment owner",
+        "pirates": "Trusted confidant",
+        "navy": "Cautious tolerance"
+      },
+      "secret_knowledge": "Hub of local secrets and gossip",
+      "default_disposition": "welcoming",
+      "available_wares": ["rum", "ale", "information", "lodging"],
+      "quest_involvement": ["tavern_secrets", "information_broker"],
+      "location_preferences": {
+        "primary": "the_poop_deck",
+        "secondary": ["market_square", "docks"]
+      }
+    },
+    "doctor_choppy": {
+      "name": "Doctor Choppy",
+      "role": "Self-proclaimed Physician",
+      "faction": "Independent",
+      "background": "A disgraced veterinary school dropout with an unsettling enthusiasm for amputations. Operates The Yellow Jack with questionable skill and unwavering confidence. His motto is 'When in doubt, apply more rum,' whether to himself or his patients.",
+      "personality_traits": ["overconfident", "enthusiastic", "questionable", "chaotic"],
+      "key_relationships": {
+        "nurse_scarlet": "Admired boss",
+        "patients": "Dubious caregiver",
+        "authorities": "Avoided"
+      },
+      "secret_knowledge": "Questionable medical practices that sometimes work",
+      "default_disposition": "eager",
+      "available_wares": ["medical supplies", "rum", "questionable remedies"],
+      "quest_involvement": ["medical_emergencies", "rum_running"],
+      "location_preferences": {
+        "primary": "the_yellow_jack",
+        "secondary": ["market_square"]
+      }
+    },
+    "nurse_scarlet": {
+      "name": "Nurse Scarlet",
+      "role": "Medical Assistant",
+      "faction": "Independent",
+      "background": "A shapely redhead with a penchant for clumsiness and naivety. Lacks formal training but compensates with boundless enthusiasm. Infatuated with Doctor Choppy, loyally following his lead despite his dubious methods.",
+      "personality_traits": ["clumsy", "naive", "enthusiastic", "loyal"],
+      "key_relationships": {
+        "doctor_choppy": "Secret admirer",
+        "patients": "Well-meaning helper",
+        "locals": "Endearing presence"
+      },
+      "secret_knowledge": "Accidental witness to many town secrets",
+      "default_disposition": "helpful",
+      "available_wares": ["bandages", "basic remedies"],
+      "quest_involvement": ["medical_aid", "love_story"],
+      "location_preferences": {
+        "primary": "the_yellow_jack",
+        "secondary": ["market_square", "apothecary"]
+      }
+    },
+    "jean_pierre_rousseau": {
+      "name": "Jean-Pierre 'One-Eye' Rousseau",
+      "role": "Tavern Owner",
+      "faction": "Former Privateers",
+      "background": "A grizzled former privateer with a weathered face and a massive scar across his left eye socket. Known for his booming laugh and commanding presence. Co-owns Three Sheets to the Wind with his wife Marie.",
+      "personality_traits": ["charismatic", "commanding", "storyteller", "jovial"],
+      "key_relationships": {
+        "marie_rousseau": "Loving husband",
+        "patrons": "Respected host",
+        "former_crew": "Trusted captain"
+      },
+      "secret_knowledge": "Old privateer routes and hidden coves",
+      "default_disposition": "friendly",
+      "available_wares": ["ale", "rum", "tales", "information"],
+      "quest_involvement": ["privateer_past", "tavern_tales"],
+      "location_preferences": {
+        "primary": "three_sheets_to_the_wind",
+        "secondary": ["docks", "market_square"]
+      }
+    },
+    "marie_rousseau": {
+      "name": "Marie 'Hurricane' Rousseau",
+      "role": "Tavern Owner",
+      "faction": "Former Smugglers",
+      "background": "An ex-smuggler with a razor-sharp tongue and a seemingly unquenchable thirst. Handles the finances and operations of Three Sheets to the Wind with ruthless efficiency. Known for out-drinking sailors and outsmarting rivals.",
+      "personality_traits": ["sharp-tongued", "efficient", "cunning", "tough"],
+      "key_relationships": {
+        "jean_pierre": "Devoted wife",
+        "merchants": "Shrewd negotiator",
+        "smugglers": "Former associate"
+      },
+      "secret_knowledge": "Underground trade networks and smuggling routes",
+      "default_disposition": "businesslike",
+      "available_wares": ["premium spirits", "exotic goods"],
+      "quest_involvement": ["smuggling_operations", "business_ventures"],
+      "location_preferences": {
+        "primary": "three_sheets_to_the_wind",
+        "secondary": ["warehouse_district", "market_square"]
+      }
+    },
+    "old_tom_whitewood": {
+      "name": "Old Tom Whitewood",
+      "role": "Tavern Owner",
+      "faction": "Independent",
+      "background": "A retired ship's carpenter from Bristol, England, now in his early 60s. Runs The Scurvy Log, a tidy, neutral establishment where all factions are welcome—provided they follow the rules. Quiet and observant, a master of his craft.",
+      "personality_traits": ["wise", "observant", "fair", "skilled"],
+      "key_relationships": {
+        "all_factions": "Neutral mediator",
+        "craftsmen": "Respected elder",
+        "sailors": "Trusted advisor"
+      },
+      "secret_knowledge": "Shipbuilding secrets and safe harbors",
+      "default_disposition": "neutral",
+      "available_wares": ["ale", "tools", "advice"],
+      "quest_involvement": ["craft_secrets", "neutral_ground"],
+      "location_preferences": {
+        "primary": "the_scurvy_log",
+        "secondary": ["shipyard", "carpenter's_workshop"]
+      }
+    },
+    "bilge_rat_billy": {
+      "name": "Bilge Rat Billy Hawkins",
+      "role": "Town Drunk",
+      "faction": "Former Pirates",
+      "background": "A scraggly, unwashed former pirate who spends his days drinking himself into oblivion. Missing three fingers and a leg, claims to have once had a golden peg leg—now traded for rum. A fixture outside The Poop Deck.",
+      "personality_traits": ["drunk", "rambling", "nostalgic", "disheveled"],
+      "key_relationships": {
+        "madame_beaufort": "Regular patron",
+        "locals": "Town character",
+        "pirates": "Former colleague"
+      },
+      "secret_knowledge": "Old pirate tales and buried secrets",
+      "default_disposition": "intoxicated",
+      "available_wares": ["rumors", "old stories"],
+      "quest_involvement": ["lost_treasures", "pirate_tales"],
+      "location_preferences": {
+        "primary": "outside_poop_deck",
+        "secondary": ["gutter", "beach"]
+      }
+    },
+    "mary_oshea": {
+      "name": "Mary O'Shea",
+      "role": "Mother",
+      "faction": "Locals",
+      "background": "Marooned on Crimson Reef as a child after a shipwreck. Raised by Irish farmer parents, Mary's tragic past has made her resilient and resourceful. Clings to hope and memories of a life she once dreamed of.",
+      "personality_traits": ["resilient", "resourceful", "hopeful", "determined"],
+      "key_relationships": {
+        "protagonist": "Mother",
+        "locals": "Respected survivor",
+        "farmers": "Community member"
+      },
+      "secret_knowledge": "Island survival skills and local history",
+      "default_disposition": "nurturing",
+      "available_wares": ["home remedies", "food", "advice"],
+      "quest_involvement": ["family_history", "island_secrets"],
+      "location_preferences": {
+        "primary": "family_farm",
+        "secondary": ["market_square", "beach"]
+      }
+    },
+    "dirk_scuttle": {
+      "name": "Dirk Scuttle",
+      "role": "Tavern Owner",
+      "faction": "Independent",
+      "background": "A burly man with a deep scar and enormous beer belly. Owner of The Drunken Gambler, keeps his past shrouded in mystery. A shrewd businessman who rarely intervenes in fights unless they threaten his operations.",
+      "personality_traits": ["mysterious", "shrewd", "intimidating", "calculating"],
+      "key_relationships": {
+        "patrons": "Feared owner",
+        "authorities": "Cautious relationship",
+        "criminals": "Silent partner"
+      },
+      "secret_knowledge": "Criminal operations and power structures",
+      "default_disposition": "guarded",
+      "available_wares": ["drinks", "gambling", "protection"],
+      "quest_involvement": ["underground_dealings", "power_plays"],
+      "location_preferences": {
+        "primary": "the_drunken_gambler",
+        "secondary": ["back_alleys", "warehouse_district"]
+      }
+    },
+    "captain_mutumbe": {
+      "name": "Captain Mutumbe",
+      "role": "Faction Leader",
+      "faction": "Free Sailors",
+      "background": "A former slave who led a successful revolt, commandeering his captors' ship. A towering figure of calm authority who wears no fabric garments but proudly dons a captain's hat and a necklace of bones, including the thumbs of his former masters.",
+      "personality_traits": ["authoritative", "tactical", "protective", "proud"],
+      "key_relationships": {
+        "free_sailors": "Respected leader",
+        "slaves": "Liberator",
+        "slavers": "Sworn enemy"
+      },
+      "secret_knowledge": "Liberation routes and safe havens",
+      "default_disposition": "dignified",
+      "available_wares": ["weapons", "ships", "freedom"],
+      "quest_involvement": ["liberation_missions", "revenge_plots"],
+      "location_preferences": {
+        "primary": "serpents_haven",
+        "secondary": ["hidden_cove", "resistance_camp"]
+      }
+    },
+    "itzcoatl": {
+      "name": "Itzcoatl",
+      "role": "Tribal Chief",
+      "faction": "Native Tribe",
+      "background": "The imposing 7-foot-tall chief of The Native's Village. A masterful diplomat who handles interactions with the Chelo (light-skinned outsiders) despite his people's tragic history. Grieving for his lost wife, Amoxtli, and devoted to his daughter Necuahual.",
+      "personality_traits": ["diplomatic", "stern", "grieving", "protective"],
+      "key_relationships": {
+        "tribe": "Respected leader",
+        "necuahual": "Protective father",
+        "outsiders": "Cautious diplomat"
+      },
+      "secret_knowledge": "Ancient tribal secrets and sacred sites",
+      "default_disposition": "reserved",
+      "available_wares": ["tribal crafts", "ancient knowledge"],
+      "quest_involvement": ["tribal_relations", "sacred_quests"],
+      "location_preferences": {
+        "primary": "natives_village",
+        "secondary": ["sacred_grounds", "meeting_grounds"]
+      }
+    },
+    "necuahual": {
+      "name": "Necuahual",
+      "role": "Chief's Daughter",
+      "faction": "Native Tribe",
+      "background": "Itzcoatl's teenage daughter, a curious and adventurous soul. Often seen on the outskirts of Thieves' Landing, observing the Chelo with fascination. Wields a modest sword salvaged from a Spanish shipwreck.",
+      "personality_traits": ["curious", "adventurous", "wise", "observant"],
+      "key_relationships": {
+        "itzcoatl": "Devoted daughter",
+        "tribe": "Future leader",
+        "outsiders": "Fascinated observer"
+      },
+      "secret_knowledge": "Blend of tribal wisdom and outsider knowledge",
+      "default_disposition": "inquisitive",
+      "available_wares": ["tribal crafts", "local plants"],
+      "quest_involvement": ["cultural_bridge", "coming_of_age"],
+      "location_preferences": {
+        "primary": "natives_village",
+        "secondary": ["thieves_landing_outskirts", "beach"]
+      }
+    },
+    "imeni_garcia": {
+      "name": "Imeni Garcia",
+      "role": "Tavern Owner",
+      "faction": "Independent",
+      "background": "The proprietor of The Anaconda, a statuesque woman in her mid-30s with a commanding presence. Despite her pleasant demeanor, rarely smiles, her past clouded by the mysterious disappearance of her parents.",
+      "personality_traits": ["commanding", "resourceful", "mysterious", "resilient"],
+      "key_relationships": {
+        "patrons": "Respected owner",
+        "thieves": "Cautious ally",
+        "authorities": "Distant"
+      },
+      "secret_knowledge": "Missing persons and hidden agendas",
+      "default_disposition": "pleasant",
+      "available_wares": ["drinks", "meals", "information"],
+      "quest_involvement": ["missing_parents", "tavern_mysteries"],
+      "location_preferences": {
+        "primary": "the_anaconda",
+        "secondary": ["thieves_landing", "market_district"]
+      }
+    },
+    "capitan_perez": {
+      "name": "Capitan Perez",
+      "role": "Spanish Leader",
+      "faction": "Spanish Crown",
+      "background": "The cunning leader of the Spaniards on Serpent's Haven. Always seen with a wine glass in hand, exudes confidence and control. Commands with charm and calculation, maintaining an iron grip on his people while indulging in luxuries.",
+      "personality_traits": ["cunning", "charming", "calculating", "indulgent"],
+      "key_relationships": {
+        "spanish_crown": "Loyal servant",
+        "colonists": "Iron-fisted ruler",
+        "other_factions": "Strategic diplomat"
+      },
+      "secret_knowledge": "Spanish Crown's secret operations",
+      "default_disposition": "diplomatic",
+      "available_wares": ["spanish_wines", "colonial_goods"],
+      "quest_involvement": ["colonial_intrigue", "power_struggles"],
+      "location_preferences": {
+        "primary": "spanish_consulate",
+        "secondary": ["governor's_mansion", "military_quarter"]
+      }
+    }
+  }
