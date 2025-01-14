@@ -1,0 +1,36 @@
+{
+    "game_id": "game_123",
+    "character_id": "madame_beaufort",
+    "location": "the_poop_deck",
+    "player_inventory": {
+        "items": {
+            "potato": true,
+            "onion": true,
+            "leed": true,
+            "carrot": true,
+            "rum": false,
+            "gold": true,
+            "meat": true
+        }
+    },
+    "game_state": {
+        "potato_quest": "started",
+        "meat_quest": "unknown",
+        "map_quest": "unknown",
+        "smuggler_quest": "unknown"
+    },
+    "time_of_day": "night",
+    "weather": "clear",
+    "npc_state": {
+        "is_enemy_aware": false,
+        "current_disposition": "friendly",
+        "has_traded_today": false,
+        "current_wares": ["rum", "information", "lodging"]
+    },
+    "player_message": "Good evening, Madame. I hear you know everything that happens in this port.",
+    "game_context": {
+        "world_background": "The year is 1742, and the Caribbean is in a state of upheaval. There has been rumor amongst the pirates that there is a treasure trove of gold hidden on the island. The player seeks to gather the gold while navigating complex political waters.",
+        "main_storyline": "The player seeks to gather a treasure trove of gold while navigating complex political waters.",
+        "current_world_state": "Tensions are high as rumors of the treasure spread."
+    }
+} 

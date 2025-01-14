@@ -1,95 +1,171 @@
-# pirate_game
+# NPC Dialogue System
 
-# NPC Dialogue System with LLM Integration
+A serverless NPC dialogue system using AWS Bedrock (Claude) to generate contextually aware, dynamic NPC responses in games. The system maintains conversation history and game state to provide coherent, contextual interactions.
 
-A dynamic NPC (Non-Player Character) dialogue system that generates contextual responses using the Llama 3 language model through Ollama. This system takes into account character backgrounds, game state, player status, and environmental conditions to create immersive and consistent character interactions.
+## System Architecture
+mermaid
+graph TD
+A[Game Client] -->|HTTP POST| B[API Gateway]
+B -->|Invoke| C[Lambda Function]
+C -->|Query/Update| D[(DynamoDB - Chat History)]
+C -->|Query| E[(DynamoDB - NPC Data)]
+C -->|Generate Response| F[AWS Bedrock]
+F -->|Claude Response| C
+C -->|Response| B
+B -->|HTTP Response| A
+style A fill:#f9f,stroke:#333,stroke-width:2px
+style B fill:#bbf,stroke:#333,stroke-width:2px
+style C fill:#dfd,stroke:#333,stroke-width:2px
+style D fill:#fdd,stroke:#333,stroke-width:2px
+style E fill:#fdd,stroke:#333,stroke-width:2px
+style F fill:#ddf,stroke:#333,stroke-width:2px
+
 
 ## Features
 
-- **Dynamic NPC Responses**: Generate contextual dialogue based on:
-  - Character background and personality
-  - Current game state
-  - Player inventory and quest progress
-  - Time of day and weather
-  - Location context
-  - Faction reputations
-  - Previous interactions
-
-- **Rich Character System**:
-  - Detailed character backgrounds stored in JSON
-  - Persistent conversation history
-  - Reputation tracking
-  - Character-specific wares and knowledge
-
-- **FastAPI Integration**:
-  - RESTful API endpoints
-  - Easy integration with game systems
-  - Chat history retrieval
-  - Proper error handling
+- Dynamic NPC dialogue generation using AWS Bedrock (Claude)
+- Persistent conversation history
+- Game state tracking
+- NPC personality and background integration
+- Quest state management
+- Serverless architecture using AWS CDK
 
 ## Prerequisites
 
-- Python 3.8+
-- Ollama with Llama 3 model installed
-- FastAPI
-- Uvicorn
+- Python 3.9+
+- AWS Account
+- AWS CLI configured
+- Node.js and npm (for CDK)
+- Docker (for layer building)
 
 ## Installation
 
 1. Clone the repository:
 bash
-git clone <repository-url>
+git clone https://github.com/yourusername/npc-dialogue-system.git
 cd npc-dialogue-system
-:
+
+
+2. Create and activate a virtual environment:
 bash
-pip install fastapi uvicorn ollama requests
-:
+python -m venv venv
+source venv/bin/activate # On Windows: venv\Scripts\activate
+
+3. Install dependencies:
 bash
-ollama pull llama3
-npc-dialogue-system/
-├── main.py # FastAPI application
-├── npc_loader.py # NPC data loading utility
-├── test_npc_api.py # Test script
-├── npc_backgrounds.json # Character data
-└── README.md
-:
+pip install -r requirements.txt
+npm install -g aws-cdk
+
+4. Bootstrap CDK (if not already done):
 bash
-python main.py
-:
+cdk bootstrap
+
+5. Build the Lambda layer:
 bash
-python test_npc_api.py
-:
-http://localhost:8000/docs
-:
+chmod +x scripts/build_layer_docker.sh
+./scripts/build_layer_docker.sh
+
+6. Deploy the stack:
+bash
+cdk deploy
+
+7. Initialize NPC data:
+Get the table name
+aws dynamodb list-tables --profile personal
+Initialize NPC data
+python npc_dialogue/scripts/initialize_npc_data.py <table_name> --profile personal
+
+
+## Usage
+
+### Testing the Endpoint
+
+Use the provided test script:
+bash
+python scripts/test_dialogue_endpoint.py
+
+
+Or use interactive mode:
+bash
+python scripts/test_dialogue_endpoint.py --interactive
+
+### Example Request
 json
 {
+"game_id": "test_game_001",
 "character_id": "madame_beaufort",
-"location": "the_poop_deck",
-"game_state": "evening_busy",
-"player_location": "tavern_interior",
-"player_inventory": {
-"items": {
-"map_piece": true,
-"compass": true
-}
-},
-"quest_progress": {
-"active_quest": "find_lost_amulet",
-"quest_stage": 2,
-"completed_quests": ["deliver_message"]
-},
-"reputation": {
-"pirate_reputation": "neutral",
-"navy_reputation": "friendly",
-"merchant_reputation": "neutral",
-"tribal_reputation": "neutral"
-},
-"time_of_day": "night",
+"player_message": "Good evening, Madame. I'm looking for a ship and crew.",
+"location": "the_salty_dog_tavern",
+"time_of_day": "evening",
 "weather": "clear",
-"npc_state": {
-"is_enemy_aware": false,
-"current_disposition": "friendly",
-"has_traded_today": false
-},
-"player_message": "Good evening, Madame. I hear you know everything that happens in this port."
+"player_location": "tavern_interior",
+"game_state": {
+"potato_quest": "unknown",
+"meat_quest": "unknown",
+"map_quest": "unknown",
+"smuggler_quest": "unknown"
 }
+}
+
+### Example Response
+json
+{
+"dialogue": "Ahoy there! Lookin' for a ship and crew, eh? Well, you've come to the right place...",
+"game_state": {
+"potato_quest": "unknown",
+"meat_quest": "unknown",
+"map_quest": "unknown",
+"smuggler_quest": "unknown"
+}
+}
+
+
+## Infrastructure
+
+The system uses the following AWS services:
+- API Gateway: REST API endpoint
+- Lambda: Serverless function for dialogue generation
+- DynamoDB: Store NPC data and chat history
+- AWS Bedrock: LLM for dialogue generation
+- CloudWatch: Logging and monitoring
+
+## Development
+
+### Project Structure
+npc_dialogue/
+├── lambda/ # Lambda function code
+│ ├── src/ # Source code
+│ └── requirements_lambda.txt # Lambda dependencies
+├── lib/ # CDK stack definition
+├── scripts/ # Utility scripts
+├── data/ # NPC data and configurations
+└── tests/ # Test files
+
+
+### Adding New NPCs
+
+1. Update `data/npc_backgrounds.json` with new NPC data
+2. Run the initialization script to update DynamoDB
+
+### Modifying the Infrastructure
+
+1. Update the CDK stack in `lib/npc_dialogue_stack.ts`
+2. Deploy changes with `cdk deploy`
+
+## Monitoring
+
+- View logs in CloudWatch Logs
+- Monitor API Gateway metrics
+- Track Lambda execution metrics
+- Check DynamoDB capacity usage
+
+## Security
+
+- API Gateway uses API key authentication
+- Lambda uses least-privilege IAM roles
+- DynamoDB uses encryption at rest
+- All data in transit is encrypted
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

@@ -1,0 +1,38 @@
+# AWS SDK and Extensions
+boto3>=1.28.0
+aws-lambda-powertools>=2.32.0
+aws-xray-sdk>=2.12.1
+
+# HTTP and API
+requests>=2.31.0
+urllib3>=2.0.7
+
+# JSON Processing
+python-json-logger>=2.0.7
+
+# Data Validation and Models
+pydantic>=2.6.1
+
+# Development and Testing
+pytest>=7.4.0
+pytest-mock>=3.11.1
+moto>=4.2.13  # AWS mocking for tests
+python-dotenv>=1.0.0  # For local environment variables
+
+# Type Checking
+mypy>=1.8.0
+types-requests>=2.31.0
+types-boto3>=1.0.2
+
+# Code Quality
+black>=23.12.1  # Code formatting
+flake8>=7.0.0   # Code linting
+isort>=5.13.2   # Import sorting
+
+# Documentation
+mkdocs>=1.5.3
+mkdocs-material>=9.5.3
+
+# Deployment
+aws-cdk-lib>=2.0.0
+constructs>=10.0.0 
