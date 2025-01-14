@@ -90,7 +90,7 @@ bash
 python scripts/test_dialogue_endpoint.py --interactive
 
 ### Example Request
-json
+```json
 {
 "game_id": "test_game_001",
 "character_id": "madame_beaufort",
@@ -106,9 +106,10 @@ json
 "smuggler_quest": "unknown"
 }
 }
+```
 
 ### Example Response
-json
+```json
 {
 "dialogue": "Ahoy there! Lookin' for a ship and crew, eh? Well, you've come to the right place...",
 "game_state": {
@@ -118,6 +119,7 @@ json
 "smuggler_quest": "unknown"
 }
 }
+```
 
 
 ## Infrastructure
