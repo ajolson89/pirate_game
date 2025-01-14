@@ -3,7 +3,7 @@
 A serverless NPC dialogue system using AWS Bedrock (Claude) to generate contextually aware, dynamic NPC responses in games. The system maintains conversation history and game state to provide coherent, contextual interactions.
 
 ## System Architecture
-mermaid
+```mermaid
 graph TD
 A[Game Client] -->|HTTP POST| B[API Gateway]
 B -->|Invoke| C[Lambda Function]
@@ -19,7 +19,7 @@ style C fill:#dfd,stroke:#333,stroke-width:2px
 style D fill:#fdd,stroke:#333,stroke-width:2px
 style E fill:#fdd,stroke:#333,stroke-width:2px
 style F fill:#ddf,stroke:#333,stroke-width:2px
-
+```
 
 ## Features
 
