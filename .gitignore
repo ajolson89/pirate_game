@@ -6,4 +6,13 @@ node_modules
 # CDK asset staging directory
 .cdk.staging
 cdk.out
-/venv
+
+
+/venv/*
+/lambda_layer/*
+/node_modules/*
+
+*.zip
+*.whl
+*.pkg
+cdk.json
