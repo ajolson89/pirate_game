@@ -134,6 +134,7 @@ The system uses the following AWS services:
 ## Development
 
 ### Project Structure
+```bash
 npc_dialogue/
 ├── lambda/ # Lambda function code
 │ ├── src/ # Source code
@@ -142,7 +143,7 @@ npc_dialogue/
 ├── scripts/ # Utility scripts
 ├── data/ # NPC data and configurations
 └── tests/ # Test files
-
+```
 
 ### Adding New NPCs
 
