@@ -8,9 +8,9 @@ node_modules
 cdk.out
 
 
-/venv/*
-/lambda_layer/*
-/node_modules/*
+venv/
+lambda_layer/
+node_modules/
 
 *.zip
 *.whl
